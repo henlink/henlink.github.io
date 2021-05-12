@@ -10,9 +10,11 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          ref: main
       - name: Create local changes
         run: node convert.js
       - name: Commit & Push changes
         uses: actions-js/push@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

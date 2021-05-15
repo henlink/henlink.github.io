@@ -47,7 +47,7 @@ xhr({
 		if (hash) {
 			// Redirect
 			var url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
-			$('section.redirecting > p').innerHTML = hash;
+			$('section.redirecting > p').innerHTML = slug;
 			location.href = url;
 		}
 		else {

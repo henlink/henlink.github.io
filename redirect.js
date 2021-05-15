@@ -47,7 +47,11 @@ xhr({
 		if (hash) {
 			// Redirect
 			var url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
-			$('section.redirecting > p').innerHTML = slug;
+			var tzJson = 'https://api.tzkt.io/v1/accounts/'+hash+'/metadata';
+			var obj = JSON.parse(tzJson);
+			$('section.avatar > p').innerHTML = '<img src='+obj.logo+'>';
+			$('section.alias > p').innerHTML = obj.alias;
+			$('section.description > p').innerHTML = obj.description;
 			location.href = url;
 		}
 		else {

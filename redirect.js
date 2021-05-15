@@ -8,9 +8,9 @@ function $$(expr, con) {
 
 function xhr(o) {
 	var xhr = new XMLHttpRequest(o.src);
-	
+
 	xhr.open("GET", o.src);
-	
+
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState == 4) {
 			if (xhr.status < 400) {
@@ -27,7 +27,7 @@ function xhr(o) {
 			}
 		}
 	};
-	
+
 	xhr.send();
 }
 
@@ -41,17 +41,13 @@ xhr({
 	src: 'hen.json',
 	onsuccess: function () {
 		var slugs = JSON.parse(this.responseText);
-		
+
 		var hash = slugs[slug];
-		
+
 		if (hash) {
 			// Redirect
 			var url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
-			var tzJson = 'https://api.tzkt.io/v1/accounts/'+hash+'/metadata';
-			var obj = JSON.parse(tzJson);
-			$('section.redirecting > p').innerHTML = '<img src='+obj.logo+'>';
-			$('section.alias > p').innerHTML = obj.alias;
-			$('section.description > p').innerHTML = obj.description;
+			$('section.redirecting > p').innerHTML = 'redirecting...';
 			location.href = url;
 		}
 		else {
@@ -59,8 +55,8 @@ xhr({
 			}
 	},
 	onerror: function () {
-		
+
 	}
 });
 
-})();
+})(); 

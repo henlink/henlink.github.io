@@ -37,7 +37,7 @@ document.body.className = 'redirecting';
 
 var p = location.pathname.slice(1);
 	
-var slug = p.toLowerCase()
+var slug = p.toLowerCase();
 
 xhr({
 	src: 'hen.json',

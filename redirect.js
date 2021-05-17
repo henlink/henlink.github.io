@@ -35,14 +35,17 @@ function xhr(o) {
 
 document.body.className = 'redirecting';
 
-var slug = location.pathname.slice(1);
+var p = location.pathname.slice(1);
+	
+var slug = p.toLowerCase()
 
 xhr({
 	src: 'hen.json',
 	onsuccess: function () {
-		var slugs = JSON.parse(this.responseText);
+		var r = this.responseText;
+		var slugs = JSON.parse(r.toLowerCase());
 
-		var hash = slugs[slug];
+		var hash  = slugs[slug];
 
 		if (hash) {
 			// Redirect

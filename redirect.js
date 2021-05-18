@@ -44,7 +44,7 @@ xhr({
 	onsuccess: function () {
 		var slugs = JSON.parse(this.responseText);
 
-		var hash  = findValueOfProperty(slugs, slug);
+		var hash  = slugs[slug];
 
 		if (hash) {
 			// Redirect
@@ -62,13 +62,3 @@ xhr({
 });
 
 })(); 
-
-function findValueOfProperty(obj, propertyName){
-    let reg = new RegExp(propertyName, "i"); // "i" to make it case insensitive
-    return Object.keys(obj).reduce((result, key) => {
-        if( reg.test(key) ) result.push(obj[key]);
-        return result;
-    }, []);
-};
-
-

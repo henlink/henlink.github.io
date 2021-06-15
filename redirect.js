@@ -53,7 +53,7 @@ xhr({
 			location.href = url;
 		}
 		else {
-			$('section.error > p').innerHTML = 'Hi! If you like to have a free short Hic Et Nunc link, please dm me on twitter <a href="https://twitter.com/playnft" target="_blank">@playnft</a>';
+			$('section.error > p').innerHTML = 'Hi! hen.link is retired :) please get your links here: <a href="https://www.hicetnunc.xyz/config" target="_blank">hicetnunc.xyz/config</a>';
 			}
 	},
 	onerror: function () {

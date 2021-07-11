@@ -38,6 +38,7 @@ document.body.className = 'redirecting';
 var p = location.pathname.slice(1);
 	
 var slug = p.toLowerCase();
+var url ="";
 
 xhr({
 	src: 'hen.json',
@@ -48,12 +49,14 @@ xhr({
 
 		if (hash) {
 			// Redirect
-			var url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
+			url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
 			$('section.redirecting > p').innerHTML = slug;
 			location.href = url;
 		}
 		else {
-			$('section.error > p').innerHTML = 'Hi! hen.link is retired :) please get your links here: <a href="https://www.hicetnunc.xyz/config" target="_blank">hicetnunc.xyz/config</a>';
+			url = 'https://www.hicetnunc.xyz/' + p;
+			$('section.redirecting > p').innerHTML = p;
+			location.href = url;
 			}
 	},
 	onerror: function () {

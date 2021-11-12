@@ -49,12 +49,12 @@ xhr({
 
 		if (hash) {
 			// Redirect
-			url = hash.indexOf('http') == 0? hash : 'https://www.hicetnunc.xyz/tz/' + hash;
+			url = hash.indexOf('http') == 0? hash : 'https://hen.teztools.io/tz/' + hash;
 			$('section.redirecting > p').innerHTML = slug;
 			location.href = url;
 		}
 		else {
-			url = 'https://www.hicetnunc.xyz/' + p;
+			url = 'https://hen.teztools.io/' + p;
 			$('section.redirecting > p').innerHTML = p;
 			location.href = url;
 			}

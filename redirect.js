@@ -49,12 +49,12 @@ xhr({
 
 		if (hash) {
 			// Redirect
-			url = hash.indexOf('http') == 0? hash : 'https://hicetnunc.xyz/tz/' + hash;
+			url = hash.indexOf('http') == 0? hash : 'https://hicetnunc.art/tz/' + hash;
 			$('section.redirecting > p').innerHTML = slug;
 			location.href = url;
 		}
 		else {
-			url = 'https://hicetnunc.xyz/' + p;
+			url = 'https://hicetnunc.art/' + p;
 			$('section.redirecting > p').innerHTML = p;
 			location.href = url;
 			}

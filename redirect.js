@@ -49,12 +49,12 @@ xhr({
 
 		if (hash) {
 			// Redirect
-			url = hash.indexOf('http') == 0? hash : 'https://hicetnunc.art/tz/' + hash;
+			url = hash.indexOf('http') == 0? hash : 'https://teia.art/tz/' + hash;
 			$('section.redirecting > p').innerHTML = slug;
 			location.href = url;
 		}
 		else {
-			url = 'https://hicetnunc.art/' + p;
+			url = 'https://teia.art/' + p;
 			$('section.redirecting > p').innerHTML = p;
 			location.href = url;
 			}
